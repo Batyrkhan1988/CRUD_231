@@ -30,7 +30,7 @@ public class HibernateConfig {
     private Environment env;
 
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(Objects.requireNonNull(env.getProperty("db.driver")));
         dataSource.setUrl(env.getProperty("db.url"));
@@ -61,7 +61,7 @@ public class HibernateConfig {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
